@@ -1,0 +1,44 @@
+# post-mortem pdb session for BUG 1: KeyError from a misspelt key
+# Command: <commands below> | python -m pdb debug_demo.py --buggy --no-catch
+# pdb does not echo piped commands, so here they are in order:
+#   c
+#   p record
+#   p list(record)
+#   w
+#   q
+
+> c:\users\eemana\downloads\week_1\week1_errors\debug_demo.py(1)<module>()
+-> """
+(Pdb) === Student report (BUGGY versions) ===
+
+--- Bug 1: label for Ali ---
+2026-10-09 14:07:23,406 ERROR    run_step:129  Bug 1: label for Ali crashed
+Traceback (most recent call last):
+  File "C:\Users\eemana\Downloads\Week_1\week1_errors\debug_demo.py", line 123, in run_step
+    result = func(*args)
+  File "C:\Users\eemana\Downloads\Week_1\week1_errors\debug_demo.py", line 38, in student_label
+    age = record["agee"]           # BUG 1: misspelt key -> KeyError
+          ~~~~~~^^^^^^^^
+KeyError: 'agee'
+Uncaught exception. Entering post mortem debugging
+Running 'cont' or 'step' will restart the program
+> c:\users\eemana\downloads\week_1\week1_errors\debug_demo.py(38)student_label()
+-> age = record["agee"]           # BUG 1: misspelt key -> KeyError
+(Pdb) {'name': 'Ali', 'age': 21, 'scores': ['85', '92', '78']}
+(Pdb) ['name', 'age', 'scores']
+(Pdb)   c:\users\eemana\appdata\local\python\pythoncore-3.14-64\lib\pdb.py(3656)main()
+-> pdb._run(target)
+  c:\users\eemana\appdata\local\python\pythoncore-3.14-64\lib\pdb.py(2566)_run()
+-> self.run(target.code)
+  c:\users\eemana\appdata\local\python\pythoncore-3.14-64\lib\bdb.py(913)run()
+-> exec(cmd, globals, locals)
+  <string>(1)<module>()
+  c:\users\eemana\downloads\week_1\week1_errors\debug_demo.py(192)<module>()
+-> sys.exit(0 if main() else 1)
+  c:\users\eemana\downloads\week_1\week1_errors\debug_demo.py(180)main()
+-> run_step("Bug 1: label for Ali", student_label, STUDENTS[0])
+  c:\users\eemana\downloads\week_1\week1_errors\debug_demo.py(123)run_step()
+-> result = func(*args)
+> c:\users\eemana\downloads\week_1\week1_errors\debug_demo.py(38)student_label()
+-> age = record["agee"]           # BUG 1: misspelt key -> KeyError
+(Pdb) 

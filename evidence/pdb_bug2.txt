@@ -1,0 +1,55 @@
+# pdb session for BUG 2: None passed down 3 calls
+# Command: <commands below> | python -m pdb debug_demo.py --buggy
+# pdb does not echo piped commands, so here they are in order:
+#   b 76
+#   c
+#   p student
+#   w
+#   up
+#   up
+#   p name
+#   p find_student(students, name)
+#   q
+
+> c:\users\eemana\downloads\week_1\week1_errors\debug_demo.py(1)<module>()
+-> """
+(Pdb) Breakpoint 1 at c:\users\eemana\downloads\week_1\week1_errors\debug_demo.py:76
+(Pdb) === Student report (BUGGY versions) ===
+
+--- Bug 1: label for Ali ---
+2026-10-09 14:07:22,389 ERROR    run_step:129  Bug 1: label for Ali crashed
+Traceback (most recent call last):
+  File "C:\Users\eemana\Downloads\Week_1\week1_errors\debug_demo.py", line 123, in run_step
+    result = func(*args)
+  File "C:\Users\eemana\Downloads\Week_1\week1_errors\debug_demo.py", line 38, in student_label
+    age = record["agee"]           # BUG 1: misspelt key -> KeyError
+          ~~~~~~^^^^^^^^
+KeyError: 'agee'
+  CRASHED (the full stack trace is in debug.log)
+
+--- Bug 2: report card for 'Zara' (a typo for Sara) ---
+> c:\users\eemana\downloads\week_1\week1_errors\debug_demo.py(76)format_scores()
+-> raw_scores = student["scores"]
+(Pdb) None
+(Pdb)   c:\users\eemana\appdata\local\python\pythoncore-3.14-64\lib\bdb.py(913)run()
+-> exec(cmd, globals, locals)
+  <string>(1)<module>()
+  c:\users\eemana\downloads\week_1\week1_errors\debug_demo.py(192)<module>()
+-> sys.exit(0 if main() else 1)
+  c:\users\eemana\downloads\week_1\week1_errors\debug_demo.py(181)main()
+-> run_step("Bug 2: report card for 'Zara' (a typo for Sara)", report_card, STUDENTS, "Zara")
+  c:\users\eemana\downloads\week_1\week1_errors\debug_demo.py(123)run_step()
+-> result = func(*args)
+  c:\users\eemana\downloads\week_1\week1_errors\debug_demo.py(58)report_card()
+-> return build_report(student)   # BUG 2: student may be None, and nobody checks
+  c:\users\eemana\downloads\week_1\week1_errors\debug_demo.py(71)build_report()
+-> return "Report: " + format_scores(student)
+> c:\users\eemana\downloads\week_1\week1_errors\debug_demo.py(76)format_scores()
+-> raw_scores = student["scores"]
+(Pdb) > c:\users\eemana\downloads\week_1\week1_errors\debug_demo.py(71)build_report()
+-> return "Report: " + format_scores(student)
+(Pdb) > c:\users\eemana\downloads\week_1\week1_errors\debug_demo.py(58)report_card()
+-> return build_report(student)   # BUG 2: student may be None, and nobody checks
+(Pdb) 'Zara'
+(Pdb) None
+(Pdb) 

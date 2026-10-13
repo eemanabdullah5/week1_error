@@ -1,0 +1,31 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# VS Code settings
+.vscode/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Generated logs
+*.log
+
+# Keep evidence logs for assignment
+!evidence/*.log
+
+# Environment variables and secrets
+.env
+.env.*
+
+# Test cache and coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Operating system files
+.DS_Store
+Thumbs.db

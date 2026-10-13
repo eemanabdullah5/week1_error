@@ -1,0 +1,125 @@
+2026-10-09 14:55:47,273 INFO     run_tests:557  tests started
+2026-10-09 14:55:47,275 DEBUG    safe_int:85  int('12.9') failed (invalid literal for int() with base 10: '12.9'); trying int(float())
+2026-10-09 14:55:47,275 WARNING  safe_int:77  safe_int: True is a bool, not a number; returning default None
+2026-10-09 14:55:47,275 DEBUG    safe_int:85  int('abc') failed (invalid literal for int() with base 10: 'abc'); trying int(float())
+2026-10-09 14:55:47,275 WARNING  safe_int:89  safe_int: cannot convert 'abc' (ValueError: could not convert string to float: 'abc'); returning default 0
+2026-10-09 14:55:47,275 DEBUG    safe_int:85  int(None) failed (int() argument must be a string, a bytes-like object or a real number, not 'NoneType'); trying int(float())
+2026-10-09 14:55:47,276 WARNING  safe_int:89  safe_int: cannot convert None (TypeError: float() argument must be a string or a real number, not 'NoneType'); returning default None
+2026-10-09 14:55:47,276 DEBUG    _to_float:133  _to_float: float([1]) raised TypeError: float() argument must be a string or a real number, not 'list'
+2026-10-09 14:55:47,276 WARNING  safe_float:146  safe_float: [1] is not a usable number; returning default None
+2026-10-09 14:55:47,277 DEBUG    _to_float:133  _to_float: float('abc') raised ValueError: could not convert string to float: 'abc'
+2026-10-09 14:55:47,277 WARNING  safe_float:146  safe_float: 'abc' is not a usable number; returning default None
+2026-10-09 14:55:47,277 DEBUG    _to_float:133  _to_float: float(None) raised TypeError: float() argument must be a string or a real number, not 'NoneType'
+2026-10-09 14:55:47,277 WARNING  safe_float:146  safe_float: None is not a usable number; returning default None
+2026-10-09 14:55:47,277 DEBUG    _to_float:119  _to_float: True is a bool, not a number
+2026-10-09 14:55:47,277 WARNING  safe_float:146  safe_float: True is not a usable number; returning default None
+2026-10-09 14:55:47,278 DEBUG    _to_float:133  _to_float: float('x') raised ValueError: could not convert string to float: 'x'
+2026-10-09 14:55:47,278 WARNING  safe_float:146  safe_float: 'x' is not a usable number; returning default None
+2026-10-09 14:55:47,278 DEBUG    _to_float:133  _to_float: float(None) raised TypeError: float() argument must be a string or a real number, not 'NoneType'
+2026-10-09 14:55:47,278 WARNING  safe_float:146  safe_float: None is not a usable number; returning default None
+2026-10-09 14:55:47,279 DEBUG    safe_int:85  int('n/a') failed (invalid literal for int() with base 10: 'n/a'); trying int(float())
+2026-10-09 14:55:47,279 WARNING  safe_int:89  safe_int: cannot convert 'n/a' (ValueError: could not convert string to float: 'n/a'); returning default None
+2026-10-09 14:55:47,279 WARNING  normalize_record:346  normalize_record: 'active'='maybe' can't be converted to bool (Cannot interpret 'maybe' as bool); using None
+2026-10-09 14:55:47,283 DEBUG    _to_float:133  _to_float: float('Ali') raised ValueError: could not convert string to float: 'Ali'
+2026-10-09 14:55:47,283 DEBUG    _to_float:133  _to_float: float('true') raised ValueError: could not convert string to float: 'true'
+2026-10-09 14:55:47,284 INFO     parse_key_value_string:443  parse_key_value_string: parsed 4 pair(s)
+2026-10-09 14:55:47,284 WARNING  parse_key_value_string:421  parse_key_value_string: skipping 'bad' (no ':')
+2026-10-09 14:55:47,284 INFO     parse_key_value_string:443  parse_key_value_string: parsed 2 pair(s)
+2026-10-09 14:55:47,285 DEBUG    safe_int:85  int('1e309') failed (invalid literal for int() with base 10: '1e309'); trying int(float())
+2026-10-09 14:55:47,286 WARNING  safe_int:89  safe_int: cannot convert '1e309' (OverflowError: cannot convert float infinity to integer); returning default 0
+2026-10-09 14:55:47,286 DEBUG    safe_int:85  int(inf) failed (cannot convert float infinity to integer); trying int(float())
+2026-10-09 14:55:47,286 WARNING  safe_int:89  safe_int: cannot convert inf (OverflowError: cannot convert float infinity to integer); returning default None
+2026-10-09 14:55:47,286 DEBUG    safe_int:85  int('-1e400') failed (invalid literal for int() with base 10: '-1e400'); trying int(float())
+2026-10-09 14:55:47,286 WARNING  safe_int:89  safe_int: cannot convert '-1e400' (OverflowError: cannot convert float infinity to integer); returning default -1
+2026-10-09 14:55:47,286 DEBUG    safe_int:85  int(nan) failed (cannot convert float NaN to integer); trying int(float())
+2026-10-09 14:55:47,286 WARNING  safe_int:89  safe_int: cannot convert nan (ValueError: cannot convert float NaN to integer); returning default None
+2026-10-09 14:55:47,287 DEBUG    safe_int:85  int(inf) failed (cannot convert float infinity to integer); trying int(float())
+2026-10-09 14:55:47,287 WARNING  safe_int:89  safe_int: cannot convert inf (OverflowError: cannot convert float infinity to integer); returning default None
+2026-10-09 14:55:47,287 DEBUG    safe_int:85  int(inf) failed (cannot convert float infinity to integer); trying int(float())
+2026-10-09 14:55:47,287 WARNING  safe_int:89  safe_int: cannot convert inf (OverflowError: cannot convert float infinity to integer); returning default 0
+2026-10-09 14:55:47,288 DEBUG    safe_int:85  int('1e309') failed (invalid literal for int() with base 10: '1e309'); trying int(float())
+2026-10-09 14:55:47,288 WARNING  safe_int:89  safe_int: cannot convert '1e309' (OverflowError: cannot convert float infinity to integer); returning default None
+2026-10-09 14:55:47,288 DEBUG    safe_int:85  int('1e309') failed (invalid literal for int() with base 10: '1e309'); trying int(float())
+2026-10-09 14:55:47,288 WARNING  safe_int:89  safe_int: cannot convert '1e309' (OverflowError: cannot convert float infinity to integer); returning default 0
+2026-10-09 14:55:47,288 DEBUG    safe_int:85  int(-inf) failed (cannot convert float infinity to integer); trying int(float())
+2026-10-09 14:55:47,288 WARNING  safe_int:89  safe_int: cannot convert -inf (OverflowError: cannot convert float infinity to integer); returning default -1
+2026-10-09 14:55:47,288 DEBUG    _to_float:133  _to_float: float(100000000000000000000000000000000000000000000000000000000...) raised OverflowError: int too large to convert to float
+2026-10-09 14:55:47,288 WARNING  safe_float:146  safe_float: 100000000000000000000000000000000000000000000000000000000... is not a usable number; returning default None
+2026-10-09 14:55:47,288 DEBUG    _to_float:133  _to_float: float(100000000000000000000000000000000000000000000000000000000...) raised OverflowError: int too large to convert to float
+2026-10-09 14:55:47,288 WARNING  safe_float:146  safe_float: 100000000000000000000000000000000000000000000000000000000... is not a usable number; returning default 0.0
+2026-10-09 14:55:47,289 DEBUG    _to_float:133  _to_float: float(-10000000000000000000000000000000000000000000000000000000...) raised OverflowError: int too large to convert to float
+2026-10-09 14:55:47,289 WARNING  safe_float:146  safe_float: -10000000000000000000000000000000000000000000000000000000... is not a usable number; returning default -1.0
+2026-10-09 14:55:47,289 DEBUG    _to_float:133  _to_float: float('--5') raised ValueError: could not convert string to float: '--5'
+2026-10-09 14:55:47,289 INFO     parse_key_value_string:443  parse_key_value_string: parsed 1 pair(s)
+2026-10-09 14:55:47,289 INFO     parse_key_value_string:443  parse_key_value_string: parsed 1 pair(s)
+2026-10-09 14:55:47,289 DEBUG    _to_float:133  _to_float: float('5-') raised ValueError: could not convert string to float: '5-'
+2026-10-09 14:55:47,289 INFO     parse_key_value_string:443  parse_key_value_string: parsed 1 pair(s)
+2026-10-09 14:55:47,289 INFO     parse_key_value_string:443  parse_key_value_string: parsed 1 pair(s)
+2026-10-09 14:55:47,290 INFO     parse_key_value_string:443  parse_key_value_string: parsed 2 pair(s)
+2026-10-09 14:55:47,290 INFO     parse_key_value_string:443  parse_key_value_string: parsed 1 pair(s)
+2026-10-09 14:55:47,291 DEBUG    _to_float:133  _to_float: float('John') raised ValueError: could not convert string to float: 'John'
+2026-10-09 14:55:47,293 INFO     parse_key_value_string:443  parse_key_value_string: parsed 1 pair(s)
+2026-10-09 14:55:47,315 INFO     parse_key_value_string:443  parse_key_value_string: parsed 1 pair(s)
+2026-10-09 14:55:47,316 INFO     parse_key_value_string:443  parse_key_value_string: parsed 1 pair(s)
+2026-10-09 14:55:47,316 INFO     parse_key_value_string:443  parse_key_value_string: parsed 2 pair(s)
+2026-10-09 14:55:47,317 INFO     parse_key_value_string:443  parse_key_value_string: parsed 1 pair(s)
+2026-10-09 14:55:47,317 DEBUG    _to_float:133  _to_float: float('"x\'') raised ValueError: could not convert string to float: '"x\''
+2026-10-09 14:55:47,317 INFO     parse_key_value_string:443  parse_key_value_string: parsed 1 pair(s)
+2026-10-09 14:55:47,318 DEBUG    _to_float:133  _to_float: float('"') raised ValueError: could not convert string to float: '"'
+2026-10-09 14:55:47,318 INFO     parse_key_value_string:443  parse_key_value_string: parsed 1 pair(s)
+2026-10-09 14:55:47,322 DEBUG    unique_preserve_order:249  dedup_key(bytearray(b'a')) failed (TypeError); using the slow == fallback
+2026-10-09 14:55:47,322 DEBUG    unique_preserve_order:249  dedup_key(bytearray(b'a')) failed (TypeError); using the slow == fallback
+2026-10-09 14:55:47,322 DEBUG    unique_preserve_order:249  dedup_key(bytearray(b'b')) failed (TypeError); using the slow == fallback
+2026-10-09 14:55:47,325 DEBUG    unique_preserve_order:249  dedup_key([1, [...]]) failed (RecursionError); using the slow == fallback
+2026-10-09 14:55:47,360 DEBUG    _to_float:119  _to_float: True is a bool, not a number
+2026-10-09 14:55:47,360 WARNING  safe_float:146  safe_float: True is not a usable number; returning default None
+2026-10-09 14:55:47,360 WARNING  safe_int:77  safe_int: False is a bool, not a number; returning default 0
+2026-10-09 14:55:47,361 DEBUG    _to_float:119  _to_float: True is a bool, not a number
+2026-10-09 14:55:47,361 WARNING  safe_float:146  safe_float: True is not a usable number; returning default None
+2026-10-09 14:55:47,362 DEBUG    safe_int:85  int([21]) failed (int() argument must be a string, a bytes-like object or a real number, not 'list'); trying int(float())
+2026-10-09 14:55:47,362 WARNING  safe_int:89  safe_int: cannot convert [21] (TypeError: float() argument must be a string or a real number, not 'list'); returning default None
+2026-10-09 14:55:47,362 DEBUG    _to_float:133  _to_float: float({'v': 1}) raised TypeError: float() argument must be a string or a real number, not 'dict'
+2026-10-09 14:55:47,362 WARNING  safe_float:146  safe_float: {'v': 1} is not a usable number; returning default None
+2026-10-09 14:55:47,362 WARNING  normalize_record:346  normalize_record: 'active'='maybe' can't be converted to bool (Cannot interpret 'maybe' as bool); using None
+2026-10-09 14:55:47,362 DEBUG    safe_int:85  int('1e309') failed (invalid literal for int() with base 10: '1e309'); trying int(float())
+2026-10-09 14:55:47,362 WARNING  safe_int:89  safe_int: cannot convert '1e309' (OverflowError: cannot convert float infinity to integer); returning default None
+2026-10-09 14:55:47,362 DEBUG    _to_float:136  _to_float: 'nan' is NaN or infinity
+2026-10-09 14:55:47,362 WARNING  safe_float:146  safe_float: 'nan' is not a usable number; returning default None
+2026-10-09 14:55:47,363 DEBUG    _to_float:136  _to_float: 'nan' is NaN or infinity
+2026-10-09 14:55:47,363 WARNING  safe_float:146  safe_float: 'nan' is not a usable number; returning default None
+2026-10-09 14:55:47,363 DEBUG    _to_float:136  _to_float: 'inf' is NaN or infinity
+2026-10-09 14:55:47,363 WARNING  safe_float:146  safe_float: 'inf' is not a usable number; returning default None
+2026-10-09 14:55:47,364 DEBUG    _to_float:136  _to_float: '1e309' is NaN or infinity
+2026-10-09 14:55:47,364 WARNING  safe_float:146  safe_float: '1e309' is not a usable number; returning default None
+2026-10-09 14:55:47,364 DEBUG    _to_float:126  _to_float: misplaced commas in '1,2,3'
+2026-10-09 14:55:47,364 WARNING  safe_float:146  safe_float: '1,2,3' is not a usable number; returning default None
+2026-10-09 14:55:47,364 DEBUG    _to_float:133  _to_float: float(100000000000000000000000000000000000000000000000000000000...) raised OverflowError: int too large to convert to float
+2026-10-09 14:55:47,364 WARNING  safe_float:146  safe_float: 100000000000000000000000000000000000000000000000000000000... is not a usable number; returning default None
+2026-10-09 14:55:47,364 DEBUG    _to_float:136  _to_float: 'nan' is NaN or infinity
+2026-10-09 14:55:47,365 WARNING  safe_float:146  safe_float: 'nan' is not a usable number; returning default None
+2026-10-09 14:55:47,365 INFO     parse_key_value_string:443  parse_key_value_string: parsed 1 pair(s)
+2026-10-09 14:55:47,365 DEBUG    _to_float:133  _to_float: float('--5') raised ValueError: could not convert string to float: '--5'
+2026-10-09 14:55:47,365 INFO     parse_key_value_string:443  parse_key_value_string: parsed 1 pair(s)
+2026-10-09 14:55:47,365 DEBUG    _to_float:133  _to_float: float('²') raised ValueError: could not convert string to float: '²'
+2026-10-09 14:55:47,365 INFO     parse_key_value_string:443  parse_key_value_string: parsed 1 pair(s)
+2026-10-09 14:55:47,365 DEBUG    _to_float:136  _to_float: 'nan' is NaN or infinity
+2026-10-09 14:55:47,366 INFO     parse_key_value_string:443  parse_key_value_string: parsed 1 pair(s)
+2026-10-09 14:55:47,366 WARNING  parse_key_value_string:427  parse_key_value_string: skipping '=5' (empty key)
+2026-10-09 14:55:47,366 INFO     parse_key_value_string:443  parse_key_value_string: parsed 1 pair(s)
+2026-10-09 14:55:47,367 DEBUG    strict_int:104  int('12.7') failed (invalid literal for int() with base 10: '12.7'); trying int(float())
+2026-10-09 14:55:47,367 DEBUG    strict_int:104  int('abc') failed (invalid literal for int() with base 10: 'abc'); trying int(float())
+2026-10-09 14:55:47,368 DEBUG    strict_int:104  int(None) failed (int() argument must be a string, a bytes-like object or a real number, not 'NoneType'); trying int(float())
+2026-10-09 14:55:47,368 DEBUG    strict_int:104  int('1e309') failed (invalid literal for int() with base 10: '1e309'); trying int(float())
+2026-10-09 14:55:47,368 DEBUG    strict_int:104  int('abc') failed (invalid literal for int() with base 10: 'abc'); trying int(float())
+2026-10-09 14:55:47,369 DEBUG    strict_int:104  int('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx...) failed (invalid literal for int() with base 10: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx...); trying int(float())
+2026-10-09 14:55:47,369 DEBUG    strict_int:104  int('abc') failed (invalid literal for int() with base 10: 'abc'); trying int(float())
+2026-10-09 14:55:47,369 WARNING  parse_key_value_string:421  parse_key_value_string: skipping 'bad' (no '=')
+2026-10-09 14:55:47,370 WARNING  parse_key_value_string:427  parse_key_value_string: skipping '=5' (empty key)
+2026-10-09 14:55:47,370 INFO     parse_key_value_string:443  parse_key_value_string: parsed 1 pair(s)
+2026-10-09 14:55:47,370 DEBUG    _to_float:133  _to_float: float('x') raised ValueError: could not convert string to float: 'x'
+2026-10-09 14:55:47,370 INFO     parse_key_value_string:443  parse_key_value_string: parsed 2 pair(s)
+2026-10-09 14:55:47,370 DEBUG    parse_key_value_string:416  parse_key_value_string: skipping an empty piece
+2026-10-09 14:55:47,370 INFO     parse_key_value_string:443  parse_key_value_string: parsed 1 pair(s)
+2026-10-09 14:55:47,370 DEBUG    _to_float:133  _to_float: float('abc') raised ValueError: could not convert string to float: 'abc'
+2026-10-09 14:55:47,371 WARNING  safe_float:146  safe_float: 'abc' is not a usable number; returning default None
+2026-10-09 14:55:47,371 INFO     run_tests:568  tests finished: 167 passed, 0 failed

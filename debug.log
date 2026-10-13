@@ -1,0 +1,8 @@
+2026-10-09 14:56:47,373 INFO     main:178  debug_demo started in FIXED mode
+2026-10-09 14:56:47,373 WARNING  report_card:64  report_card: no student named 'Zara'
+2026-10-09 14:56:47,374 DEBUG    strict_int:104  int('n/a') failed (invalid literal for int() with base 10: 'n/a'); trying int(float())
+2026-10-09 14:56:47,374 WARNING  convert_scores:112  convert_scores: skipping bad score 'n/a' (cannot convert 'n/a' to int)
+2026-10-09 14:56:47,375 WARNING  report_card:64  report_card: no student named 'Zara'
+2026-10-09 14:56:47,375 DEBUG    strict_int:104  int('n/a') failed (invalid literal for int() with base 10: 'n/a'); trying int(float())
+2026-10-09 14:56:47,375 WARNING  convert_scores:112  convert_scores: skipping bad score 'n/a' (cannot convert 'n/a' to int)
+2026-10-09 14:56:47,376 INFO     main:187  debug_demo finished

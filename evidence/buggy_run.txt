@@ -1,0 +1,34 @@
+=== Student report (BUGGY versions) ===
+
+--- Bug 1: label for Ali ---
+2026-10-09 14:13:52,660 ERROR    run_step:129  Bug 1: label for Ali crashed
+Traceback (most recent call last):
+  File "C:\Users\eemana\Downloads\Week_1\week1_errors\debug_demo.py", line 123, in run_step
+    result = func(*args)
+  File "C:\Users\eemana\Downloads\Week_1\week1_errors\debug_demo.py", line 38, in student_label
+    age = record["agee"]           # BUG 1: misspelt key -> KeyError
+          ~~~~~~^^^^^^^^
+KeyError: 'agee'
+  CRASHED (the full stack trace is in debug.log)
+
+--- Bug 2: report card for 'Zara' (a typo for Sara) ---
+2026-10-09 14:13:52,661 ERROR    run_step:129  Bug 2: report card for 'Zara' (a typo for Sara) crashed
+Traceback (most recent call last):
+  File "C:\Users\eemana\Downloads\Week_1\week1_errors\debug_demo.py", line 123, in run_step
+    result = func(*args)
+  File "C:\Users\eemana\Downloads\Week_1\week1_errors\debug_demo.py", line 58, in report_card
+    return build_report(student)   # BUG 2: student may be None, and nobody checks
+  File "C:\Users\eemana\Downloads\Week_1\week1_errors\debug_demo.py", line 71, in build_report
+    return "Report: " + format_scores(student)
+                        ~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\eemana\Downloads\Week_1\week1_errors\debug_demo.py", line 76, in format_scores
+    raw_scores = student["scores"]
+                 ~~~~~~~^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+  CRASHED (the full stack trace is in debug.log)
+
+--- Bug 3: average([85, 92, 78]), expected 85.0 ---
+  56.67
+
+--- Bug 4: convert Sara's scores ['90', '88', 'n/a'] ---
+  [90, 88]

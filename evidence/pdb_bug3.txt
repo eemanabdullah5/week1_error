@@ -1,0 +1,64 @@
+# pdb session for BUG 3: off-by-one loop gives a wrong average
+# Command: <commands below> | python -m pdb debug_demo.py --buggy
+# pdb does not echo piped commands, so here they are in order:
+#   b 86
+#   c
+#   p i, scores[i], total
+#   p list(range(1, len(scores)))
+#   w
+#   c
+#   p i, scores[i], total
+#   q
+
+> c:\users\eemana\downloads\week_1\week1_errors\debug_demo.py(1)<module>()
+-> """
+(Pdb) Breakpoint 1 at c:\users\eemana\downloads\week_1\week1_errors\debug_demo.py:86
+(Pdb) === Student report (BUGGY versions) ===
+
+--- Bug 1: label for Ali ---
+2026-10-09 14:07:22,906 ERROR    run_step:129  Bug 1: label for Ali crashed
+Traceback (most recent call last):
+  File "C:\Users\eemana\Downloads\Week_1\week1_errors\debug_demo.py", line 123, in run_step
+    result = func(*args)
+  File "C:\Users\eemana\Downloads\Week_1\week1_errors\debug_demo.py", line 38, in student_label
+    age = record["agee"]           # BUG 1: misspelt key -> KeyError
+          ~~~~~~^^^^^^^^
+KeyError: 'agee'
+  CRASHED (the full stack trace is in debug.log)
+
+--- Bug 2: report card for 'Zara' (a typo for Sara) ---
+2026-10-09 14:07:22,908 ERROR    run_step:129  Bug 2: report card for 'Zara' (a typo for Sara) crashed
+Traceback (most recent call last):
+  File "C:\Users\eemana\Downloads\Week_1\week1_errors\debug_demo.py", line 123, in run_step
+    result = func(*args)
+  File "C:\Users\eemana\Downloads\Week_1\week1_errors\debug_demo.py", line 58, in report_card
+    return build_report(student)   # BUG 2: student may be None, and nobody checks
+  File "C:\Users\eemana\Downloads\Week_1\week1_errors\debug_demo.py", line 71, in build_report
+    return "Report: " + format_scores(student)
+                        ~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\eemana\Downloads\Week_1\week1_errors\debug_demo.py", line 76, in format_scores
+    raw_scores = student["scores"]
+                 ~~~~~~~^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+  CRASHED (the full stack trace is in debug.log)
+
+--- Bug 3: average([85, 92, 78]), expected 85.0 ---
+> c:\users\eemana\downloads\week_1\week1_errors\debug_demo.py(86)average()
+-> total += scores[i]
+(Pdb) (1, 92, 0)
+(Pdb) [1, 2]
+(Pdb)   c:\users\eemana\appdata\local\python\pythoncore-3.14-64\lib\bdb.py(913)run()
+-> exec(cmd, globals, locals)
+  <string>(1)<module>()
+  c:\users\eemana\downloads\week_1\week1_errors\debug_demo.py(192)<module>()
+-> sys.exit(0 if main() else 1)
+  c:\users\eemana\downloads\week_1\week1_errors\debug_demo.py(182)main()
+-> run_step("Bug 3: average([85, 92, 78]), expected 85.0", average, [85, 92, 78])
+  c:\users\eemana\downloads\week_1\week1_errors\debug_demo.py(123)run_step()
+-> result = func(*args)
+> c:\users\eemana\downloads\week_1\week1_errors\debug_demo.py(86)average()
+-> total += scores[i]
+(Pdb) > c:\users\eemana\downloads\week_1\week1_errors\debug_demo.py(86)average()
+-> total += scores[i]
+(Pdb) (2, 78, 92)
+(Pdb) 

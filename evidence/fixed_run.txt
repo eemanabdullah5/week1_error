@@ -1,0 +1,31 @@
+=== Student report (FIXED versions) ===
+
+--- Bug 1: label for Ali ---
+  Ali (age 21)
+
+--- Bug 2: report card for 'Zara' (a typo for Sara) ---
+2026-10-09 14:13:53,094 WARNING  report_card:64  report_card: no student named 'Zara'
+  No student named 'Zara'
+
+--- Bug 3: average([85, 92, 78]), expected 85.0 ---
+  85.0
+
+--- Bug 4: convert Sara's scores ['90', '88', 'n/a'] ---
+2026-10-09 14:13:53,094 WARNING  convert_scores:112  convert_scores: skipping bad score 'n/a' (cannot convert 'n/a' to int)
+  [90, 88]
+
+=== Regression checks ===
+  [PASS] BUG 1: student_label uses the right key
+         got:      'Ali (age 21)'
+2026-10-09 14:13:53,094 WARNING  report_card:64  report_card: no student named 'Zara'
+  [PASS] BUG 2: unknown name gives a message, not a crash
+         got:      "No student named 'Zara'"
+  [PASS] BUG 3: average counts the first score
+         got:      85.0
+2026-10-09 14:13:53,095 WARNING  convert_scores:112  convert_scores: skipping bad score 'n/a' (cannot convert 'n/a' to int)
+  [PASS] BUG 4: good scores are kept
+         got:      [90, 88]
+  [PASS] BUG 4: the bad score is logged as a WARNING
+         got:      ['WARNING']
+
+=== Regression checks: 5/5 passed ===
